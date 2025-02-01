@@ -1,43 +1,118 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 2 - Comparação das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de comparação de cartas de cidades. 
-// Siga os comentários para implementar cada parte do desafio.
+int main()
+{
+    // city 1
+    char city_1_code[5];
+    char city_1_name[50];
+    long unsigned int city_1_population;
+    float city_1_area;
+    float city_1_GDP_total;
+    int city_1_tourist_attractions;
 
-int main() {
-    // Definição das variáveis para armazenar as propriedades das cidades
-    // Você pode utilizar o código do primeiro desafio
+    float city_1_population_density;
+    float city_1_GDP_per_capita;
+    float city_1_superpower;
 
-    
-    // Cadastro das Cartas:
-    // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
-    // utilizando a função scanf para capturar as entradas.
-    // utilize o código do primeiro desafio
+    // city 2
+    char city_2_code[5];
+    char city_2_name[50];
+    int city_2_population;
+    float city_2_area;
+    float city_2_GDP_total;
+    int city_2_tourist_attractions;
 
-    // Exemplo:
-    // printf("Digite o código da cidade: ");
-    // scanf("%s", codigo);
-    // 
-    // (Repita para cada propriedade)
+    float city_2_population_density;
+    float city_2_GDP_per_capita;
+    float city_2_superpower;
 
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
+    // city 1
+    printf("Digite o código da cidade 1: ");
+    scanf("%s", city_1_code);
 
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
+    printf("Digite o nome da cidade 1: ");
+    scanf("%s", city_1_name);
 
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
+    printf("Digite a população da cidade 1: ");
+    scanf("%d", &city_1_population);
 
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+    printf("Digite a área da cidade 1: ");
+    scanf("%f", &city_1_area);
+
+    printf("Digite o PIB da cidade 1: ");
+    scanf("%f", &city_1_GDP_total);
+
+    printf("Digite o número de pontos turísticos da cidade 1: ");
+    scanf("%d", &city_1_tourist_attractions);
+
+    printf("\n**********\n\n");
+
+    // city 2
+    printf("Digite o código da cidade 2: ");
+    scanf("%s", city_2_code);
+
+    printf("Digite o nome da cidade 2: ");
+    scanf("%s", city_2_name);
+
+    printf("Digite a população da cidade 2: ");
+    scanf("%d", &city_2_population);
+
+    printf("Digite a área da cidade 2: ");
+    scanf("%f", &city_2_area);
+
+    printf("Digite o PIB da cidade 2: ");
+    scanf("%f", &city_2_GDP_total);
+
+    printf("Digite o número de pontos turísticos da cidade 2: ");
+    scanf("%d", &city_2_tourist_attractions);
+
+    // city 1
+    city_1_population_density = city_1_population / city_1_area;
+    city_1_GDP_per_capita = city_1_GDP_total / city_1_population;
+    city_1_superpower = city_1_population + city_1_area + city_1_GDP_total + city_1_tourist_attractions;
+
+    // city 2
+    city_2_population_density = city_2_population / city_2_area;
+    city_2_GDP_per_capita = city_2_GDP_total / city_2_population;
+    city_2_superpower = city_2_population + city_2_area + city_2_GDP_total + city_2_tourist_attractions;
+
+    // city 1
+    printf(
+        "\nCidade: %s - [%s]\nPopulação: %d\nÁrea: %.2f\nPIB: %.2f\nPontos Turísticos: %d\nDensidade de População: %.2f\nPIB por Capita: %.2f\nSuper poder: %.2f\n",
+        city_1_name,
+        city_1_code,
+        city_1_population,
+        city_1_area,
+        city_1_GDP_total,
+        city_1_tourist_attractions,
+        city_1_population_density,
+        city_1_GDP_per_capita,
+        city_1_superpower);
+
+    // city 2
+    printf(
+        "\nCidade: %s - [%s]\nPopulação: %d\nÁrea: %.2f\nPIB: %.2f\nPontos Turísticos: %d\nDensidade de População: %.2f\nPIB por Capita: %.2f\nSuper poder: %.2f\n",
+        city_2_name,
+        city_2_code,
+        city_2_population,
+        city_2_area,
+        city_2_GDP_total,
+        city_2_tourist_attractions,
+        city_2_population_density,
+        city_2_GDP_per_capita,
+        city_2_superpower);
+
+    // winner
+    if (city_1_population > city_2_population)
+    {
+        printf(
+            "\n%s é a vencedora!\n", city_1_name);
+    }
+    else
+    {
+        printf(
+            "\n%s é a vencedora!\n", city_2_name);
+    }
 
     return 0;
 }
