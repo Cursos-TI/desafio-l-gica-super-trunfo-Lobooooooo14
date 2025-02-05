@@ -17,7 +17,7 @@ int main()
     // city 2
     char city_2_code[5];
     char city_2_name[50];
-    long unsigned int city_2_population;
+    int city_2_population;
     float city_2_area;
     float city_2_GDP_total;
     int city_2_tourist_attractions;
@@ -26,36 +26,47 @@ int main()
     float city_2_GDP_per_capita;
     float city_2_superpower;
 
-    // city 1 input
+    // city 1
     printf("Digite o código da cidade 1: ");
     scanf("%s", city_1_code);
+
     printf("Digite o nome da cidade 1: ");
     scanf("%s", city_1_name);
+
     printf("Digite a população da cidade 1: ");
-    scanf("%lu", &city_1_population);
+    scanf("%d", &city_1_population);
+
     printf("Digite a área da cidade 1: ");
     scanf("%f", &city_1_area);
+
     printf("Digite o PIB da cidade 1: ");
     scanf("%f", &city_1_GDP_total);
+
     printf("Digite o número de pontos turísticos da cidade 1: ");
     scanf("%d", &city_1_tourist_attractions);
 
     printf("\n**********\n\n");
 
-    // city 2 input
+    // city 2
     printf("Digite o código da cidade 2: ");
     scanf("%s", city_2_code);
+
     printf("Digite o nome da cidade 2: ");
     scanf("%s", city_2_name);
+
     printf("Digite a população da cidade 2: ");
-    scanf("%lu", &city_2_population);
+    scanf("%d", &city_2_population);
+
     printf("Digite a área da cidade 2: ");
     scanf("%f", &city_2_area);
+
     printf("Digite o PIB da cidade 2: ");
     scanf("%f", &city_2_GDP_total);
+
     printf("Digite o número de pontos turísticos da cidade 2: ");
     scanf("%d", &city_2_tourist_attractions);
 
+    // Calculando métricas
     city_1_population_density = city_1_population / city_1_area;
     city_1_GDP_per_capita = city_1_GDP_total / city_1_population;
     city_1_superpower = city_1_population + city_1_area + city_1_GDP_total + city_1_tourist_attractions;
@@ -64,65 +75,93 @@ int main()
     city_2_GDP_per_capita = city_2_GDP_total / city_2_population;
     city_2_superpower = city_2_population + city_2_area + city_2_GDP_total + city_2_tourist_attractions;
 
-    // menu
-    int escolha;
-    printf("\nEscolha o atributo para comparação:\n");
-    printf("1 - População\n");
-    printf("2 - Área\n");
-    printf("3 - PIB\n");
-    printf("4 - Pontos Turísticos\n");
-    printf("5 - Densidade Populacional\n");
-    printf("6 - PIB per Capita\n");
-    printf("7 - Super poder\n");
-    printf("Opção: ");
-    scanf("%d", &escolha);
+    int choice1, choice2;
+    printf("\nEscolha dois atributos para comparação:\n");
+    printf("1. População\n2. Área\n3. PIB Total\n4. Pontos Turísticos\n5. Densidade Populacional\n6. PIB per Capita\n7. Super Poder\n");
+    printf("Digite o primeiro atributo: ");
+    scanf("%d", &choice1);
+    printf("Digite o segundo atributo: ");
+    scanf("%d", &choice2);
 
-    switch (escolha)
+    float city_1_value1, city_2_value1, city_1_value2, city_2_value2;
+
+    switch (choice1)
     {
     case 1:
-        if (city_1_population > city_2_population)
-            printf("%s vence em população!\n", city_1_name);
-        else
-            printf("%s vence em população!\n", city_2_name);
+        city_1_value1 = city_1_population;
+        city_2_value1 = city_2_population;
         break;
     case 2:
-        if (city_1_area > city_2_area)
-            printf("%s tem maior área!\n", city_1_name);
-        else
-            printf("%s tem maior área!\n", city_2_name);
+        city_1_value1 = city_1_area;
+        city_2_value1 = city_2_area;
         break;
     case 3:
-        if (city_1_GDP_total > city_2_GDP_total)
-            printf("%s tem maior PIB!\n", city_1_name);
-        else
-            printf("%s tem maior PIB!\n", city_2_name);
+        city_1_value1 = city_1_GDP_total;
+        city_2_value1 = city_2_GDP_total;
         break;
     case 4:
-        if (city_1_tourist_attractions > city_2_tourist_attractions)
-            printf("%s tem mais pontos turísticos!\n", city_1_name);
-        else
-            printf("%s tem mais pontos turísticos!\n", city_2_name);
+        city_1_value1 = city_1_tourist_attractions;
+        city_2_value1 = city_2_tourist_attractions;
         break;
     case 5:
-        if (city_1_population_density < city_2_population_density)
-            printf("%s tem menor densidade populacional!\n", city_1_name);
-        else
-            printf("%s tem menor densidade populacional!\n", city_2_name);
+        city_1_value1 = city_1_population_density;
+        city_2_value1 = city_2_population_density;
         break;
     case 6:
-        if (city_1_GDP_per_capita > city_2_GDP_per_capita)
-            printf("%s tem maior PIB per capita!\n", city_1_name);
-        else
-            printf("%s tem maior PIB per capita!\n", city_2_name);
+        city_1_value1 = city_1_GDP_per_capita;
+        city_2_value1 = city_2_GDP_per_capita;
         break;
     case 7:
-        if (city_1_superpower > city_2_superpower)
-            printf("%s é a cidade mais poderosa!\n", city_1_name);
-        else
-            printf("%s é a cidade mais poderosa!\n", city_2_name);
+        city_1_value1 = city_1_superpower;
+        city_2_value1 = city_2_superpower;
         break;
-    default:
-        printf("Opção inválida!\n");
+    }
+
+    switch (choice2)
+    {
+    case 1:
+        city_1_value2 = city_1_population;
+        city_2_value2 = city_2_population;
+        break;
+    case 2:
+        city_1_value2 = city_1_area;
+        city_2_value2 = city_2_area;
+        break;
+    case 3:
+        city_1_value2 = city_1_GDP_total;
+        city_2_value2 = city_2_GDP_total;
+        break;
+    case 4:
+        city_1_value2 = city_1_tourist_attractions;
+        city_2_value2 = city_2_tourist_attractions;
+        break;
+    case 5:
+        city_1_value2 = city_1_population_density;
+        city_2_value2 = city_2_population_density;
+        break;
+    case 6:
+        city_1_value2 = city_1_GDP_per_capita;
+        city_2_value2 = city_2_GDP_per_capita;
+        break;
+    case 7:
+        city_1_value2 = city_1_superpower;
+        city_2_value2 = city_2_superpower;
+        break;
+    }
+
+    if ((city_1_value1 > city_2_value1 && city_1_value2 > city_2_value2) ||
+        (city_1_value1 > city_2_value1 && city_1_value2 == city_2_value2) ||
+        (city_1_value1 == city_2_value1 && city_1_value2 > city_2_value2))
+    {
+        printf("\n%s é a vencedora!\n", city_1_name);
+    }
+    else if (city_1_value1 == city_2_value1 && city_1_value2 == city_2_value2)
+    {
+        printf("\nEmpate!\n");
+    }
+    else
+    {
+        printf("\n%s é a vencedora!\n", city_2_name);
     }
 
     return 0;
