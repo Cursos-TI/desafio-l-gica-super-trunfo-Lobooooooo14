@@ -66,7 +66,6 @@ int main()
     printf("Digite o número de pontos turísticos da cidade 2: ");
     scanf("%d", &city_2_tourist_attractions);
 
-    // Calculando métricas
     city_1_population_density = city_1_population / city_1_area;
     city_1_GDP_per_capita = city_1_GDP_total / city_1_population;
     city_1_superpower = city_1_population + city_1_area + city_1_GDP_total + city_1_tourist_attractions;
